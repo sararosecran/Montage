@@ -1,6 +1,11 @@
+# Final Image header
+Montage has a command that will create the final image header information given the exposure images' header information. To generate this header one uses the command **mMakeHdr images.tbl template.hdr**. 
+
+* template.hdr is the name of the generated header.
+
 # Reprojection of Images
 
-First the raw images will need to be reprojected. The command **mImgtbl rawdir images-rawdir.tb** will create a table with header infomation about the exposures.
+To create the mosaic one will first need to reproject the raw images. The command **mImgtbl rawdir images-rawdir.tb** will create a table with header infomation about the exposures.
 
 * rawdir is the directory containing the exposures
 * images_rawdir.tb is the file name for the created table
@@ -74,3 +79,9 @@ Finally a mosaic is produced using **mAdd -p corrdir images.tbl template.hdr fin
 
 * mosaic.fits is the final mosaic image
 
+# Create a Weight Map
+
+Montage can generate a fits image of the number of times that an output pixel overlaps the input images, that is a wight map. The command used to generate this is **mAdd -p corrdir -a count images.tbl F090W_8exp.hdr final/full_F090W_8exp.fits**. 
+Note that it is the same **mAdd** command as above expect the **-a** option is used. 
+
+* count gives the number of times a pixel overlaps.
