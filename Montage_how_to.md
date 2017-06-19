@@ -5,11 +5,11 @@ First the raw images will need to be reprojected. The command **mImgtbl rawdir i
 * rawdir is the directory containing the exposures
 * images_rawdir.tb is the file name for the created table
 
-To run the reprojection the command mProjExec -p rawdir images-rawdir.tbl template.hdr projdir stats.tbl is used.
+To run the reprojection the command **mProjExec -p rawdir images-rawdir.tbl template.hdr projdir stats.tbl** is used.
 
-template.hdr is a file containing the header information for the final mosaic image. An example is shown below.
-projdir is the directory where the reprojeted images will be stored.
-stats.tbl is a created file with status information for each image.
+* template.hdr is a file containing the header information for the final mosaic image. An example is shown below.
+* projdir is the directory where the reprojeted images will be stored.
+* stats.tbl is a created file with status information for each image.
 
 Example header information:
 
@@ -32,44 +32,45 @@ CD2_2 =       8.7006938E-06
 
 END
 
-The projected image information is given in a table by running the command mImgtbl projdir images.tbl.
+The projected image information is given in a table by running the command **mImgtbl projdir images.tbl**.
 
-images.tbl is the name of the file containing this information.
+* images.tbl is the name of the file containing this information.
 
-Uncorrected Mosaic
+# Uncorrected Mosaic
 
-A mosaic is now created without background matching. The command used is mAdd -p projdir images.tbl template.hdr final/example_uncorrected.fits.
+A mosaic is now created without background matching. The command used is **mAdd -p projdir images.tbl template.hdr final/example_uncorrected.fits**.
 
-final is the directory in which final mosaic images are stored
-example_uncorrected.fits is the filename of the uncorrected mosaic
+* final is the directory in which final mosaic images are stored
+* example_uncorrected.fits is the filename of the uncorrected mosaic
+* -p is the path to the directory with the reprojected images.
 
-Background Matching
+# Background Matching
 
 Background matching is done to create a "corrected" mosaic.
 
-First the overlaps of the reprojected images are found using mOverlaps images.tbl diffs.tbl.
+First the overlaps of the reprojected images are found using **mOverlaps images.tbl diffs.tbl**.
 
-diff.tbl is a table describing the overlaps
+* diff.tbl is a table describing the overlaps
 
-The command mDiffExec -p projdir diffs.tbl template.hdr diffdir will subtract each pair of overlapping images and creates a set of difference images.
+The command **mDiffExec -p projdir diffs.tbl template.hdr diffdir** will subtract each pair of overlapping images and creates a set of difference images.
 
-diffdir is the directory where the difference images are stored
+* diffdir is the directory where the difference images are stored
 
-A plane fitting is now done on each difference image using mFitExec diffs.tbl fits.tbl diffdir.
+A plane fitting is now done on each difference image using **mFitExec diffs.tbl fits.tbl diffdir**.
 
-fits.tbl is a table with coefficients found from the fitting.
+* fits.tbl is a table with coefficients found from the fitting.
 
-Backgorund removal is now done on the reprojected images. First a table is created with corrections to be applied to each image with command mBgModel images.tbl fits.tbl corrections.tbl.
+Backgorund removal is now done on the reprojected images. First a table is created with corrections to be applied to each image with command **mBgModel images.tbl fits.tbl corrections.tbl**.
 
-corrections.tbl is the file containing these corrections
+* corrections.tbl is the file containing these corrections
 
-The corrections are then applied with mBgExec -p projdir images.tbl corrections.tbl corrdir.
+The corrections are then applied with **mBgExec -p projdir images.tbl corrections.tbl corrdir**.
 
-corrdir is the directory containing corrected exposure images.
+* corrdir is the directory containing corrected exposure images.
 
-Final Mosaic
+# Final Mosaic
 
-Finally a mosaic is produced using mAdd -p corrdir images.tbl template.hdr final/mosaic.fits
+Finally a mosaic is produced using **mAdd -p corrdir images.tbl template.hdr final/mosaic.fits**.
 
-mosaic.fits is the final mosaic image
+* mosaic.fits is the final mosaic image
 
