@@ -13,22 +13,22 @@ To run the reprojection the command **mProjExec -p rawdir images-rawdir.tbl temp
 
 Example header information:
 
-SIMPLE =          T / conforms to FITS standard
-BITPIX =           -64 /array data type
-NAXIS =            2 / number of array dimensions
-NAXIS1 =          2797
-NAXIS2 =          2797
-EXTEND =         T
-CTYPE1 =  'RA---TAN'
-CTYPE2 =  'DEC--TAN'
-CRVAL1 =      53.1153485
-CRPIX1 =       1024.0
-CRVAL2 =      -27.8015545
-CRPIX2 =      1024.0
-CD1_1 =        8.6466189E-06
-CD1_2 =       1.227034E-07
-CD2_1 =       -1.219408E-07
-CD2_2 =       8.7006938E-06
+SIMPLE =          T / conforms to FITS standard  
+BITPIX =           -64 /array data type   
+NAXIS =            2 / number of array dimensions   
+NAXIS1 =          2797  
+NAXIS2 =          2797  
+EXTEND =         T  
+CTYPE1 =  'RA---TAN'  
+CTYPE2 =  'DEC--TAN'  
+CRVAL1 =      53.1153485  
+CRPIX1 =       1024.0   
+CRVAL2 =      -27.8015545   
+CRPIX2 =      1024.0   
+CD1_1 =        8.6466189E-06   
+CD1_2 =       1.227034E-07   
+CD2_1 =       -1.219408E-07  
+CD2_2 =       8.7006938E-06   
 
 END
 
