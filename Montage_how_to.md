@@ -81,7 +81,7 @@ Finally a mosaic is produced using **mAdd -p corrdir images.tbl template.hdr fin
 
 # Create a Weight Map
 
-Montage can generate a fits image of the number of times that an output pixel overlaps the input images, that is a wight map. The command used to generate this is **mAdd -p corrdir -a count images.tbl F090W_8exp.hdr final/full_F090W_8exp.fits**. 
+Montage can generate a fits image of the number of times that an output pixel overlaps the input images, that is a weight map. The command used to generate this is **mAdd -p corrdir -a count images.tbl F090W_8exp.hdr final/full_F090W_8exp.fits**. 
 Note that it is the same **mAdd** command as above expect the **-a** option is used. 
 
 * count gives the number of times a pixel overlaps.
