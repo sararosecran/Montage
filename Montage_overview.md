@@ -47,7 +47,7 @@ Below is an example of an original exposure and it's reprojected input image.
 
 After the reprojection is completed the differences in background will be removed. To do this, the physical overlap between neighboring reprojected images are found. 
 A least squares fit is then used to determine the pixel differences in these images. Half of the correction is applied, and the process is repeated until differences 
-in overlaping images are very small. At the moment the number of iterations and is fixed at 5000. 
+in overlaping images are very small. At the moment the number of iterations is fixed and is defaulted to 5000 unless specified. 
 
 # Final Mosaic
 
