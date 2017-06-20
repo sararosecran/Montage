@@ -34,7 +34,7 @@ CD2_2 =       8.7006938E-06
 
 END
 
-![alt text](Montage_projection_sphere.png)
+![image](Montage_projection_sphere.png)
 Image(filename='Montage_projection_sphere.png')
 
 The above image is from http://montage.ipac.caltech.edu/docs/algorithms.html
