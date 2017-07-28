@@ -1,5 +1,5 @@
 # Final Image header
-Montage has a command that will create the final image header information given the exposure images' header information. To generate this header one uses the command **mMakeHdr images.tbl template.hdr**. 
+Montage has a command that will create the final image header information given the exposure images' header information. To generate this header one uses the command **mMakeHdr images-rawdir.tbl template.hdr**. 
 
 * template.hdr is the name of the generated header.
 
